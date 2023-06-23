@@ -1,0 +1,22 @@
+<h1 class="center">Liste de Pokémons</h1>
+<!--keyup.enter = pseudo event d'Angular, seulement à la touche entrée, on affiche le résultat-->
+
+<!--materialize permet la mise en page-->
+<div class="container">
+     <!--row par défaut = 12, donc s6 = 12/6 = affiche 2 pokemons/ligne-->
+    <div class="row">
+        <div *ngFor="let pokemon of pokemonList" class="col m4 s6">
+            <div class="card horizontal" (click)="selectPokemon(pokemon.id)" pkmnBorderCard>
+                <div class="card-image">
+                    <img [src]="pokemon.picture"/>
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <p> {{pokemon.name}} </p>
+                        <p><small> {{pokemon.created}} </small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
